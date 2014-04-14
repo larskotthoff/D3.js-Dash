@@ -8,6 +8,6 @@ Initial blog post here :
 
     http://nyquist212.wordpress.com/
 
-Special thanks to Lars Kutthof for his mentoring and exceptional patience.
+Special thanks to Lars Kutthof for his mentoring and patience.
 
     http://stackoverflow.com/users/1172002/lars-kotthoff
