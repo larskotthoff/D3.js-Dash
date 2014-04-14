@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Simple d3.js proof of concept dashboard.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="js/vendor/d3.v3.min.js"></script>
+	<script src="js/vendor/queue.v1.min.js"></script>
+	<script src="js/vendor/sankey.js"></script>     
+	<script src="js/vendor/d3.tip.index.js"></script>
+	<script src="js/vendor/topojson.v1.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/EDpriority.js"></script>
+	<script src="js/Readmits.js"></script>
+	<script src="js/Census.js"></script>
+	<script src="js/mySankey.js"></script>
+	<script src="js/Choropleth.js"></script>
+	<script type="text/javascript"> 
+		window.onload = function () {
+		    var dateTime = new Date();
+		    var formattedDateTime = "Updated " + dateTime.toLocaleDateString() + " at " + dateTime.toLocaleTimeString()
+		    var divObject = document.getElementById("dateTimeValue");
+		    divObject.innerHTML = formattedDateTime;
+		}
+	</script>
+
+    <title>Simple D3.js Dashboard</title>
+
+</head>
+<body>
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+<div id="Row1">
+<div class="widget1">
+	<H2>7 Day ED Admit Priority</H2>
+	<div id="dateTimeValue" style="font-size: 10px"></div>
+	<UL>
+		<LI>
+			<div id="emergency"></div>
+		</LI>
+		<LI>
+			<div id="trauma"></div>
+		</LI>
+		<LI>
+			<div id="urgent"></div>
+		</LI>
+		<LI>
+			<div id="newborn"></div>
+		</LI>
+		<LI>
+			<div id="elective"></div>
+		</LI>
+		<LI style="font-size: 10px" >Admissions via the Emergency Department vary by acuity. Acuity categories are summarized by day. </LI>
+	</UL>
+</div>
+        
+
+<div class="widget1">
+	<H2>7 Day Readmissions</H2>
+	<UL>
+		<LI>
+			<div id="readmissions"></div>
+		</LI>
+		<LI style="font-size: 10px">Each node represents a hospital experiencing an unplanned readmission. Arrows indicate the flow from discharging index Hospital to readmitting hospital.</LI>
+	</UL>
+</div>
+
+
+<div class="widget1">
+	<H2>Inpatient Census</H2>
+	<UL>
+		<LI>
+			<div id="inpatientcensus"></div>
+		</LI>
+		<LI style="font-size: 10px">The hospital system census includes inpatient, acute rehab and swing bed. It excludes hospitals with zero census, nursery, newborns, ED, and recurring outpatient.</LI>
+	</UL>
+</div>
+
+ <!-- END ROW1 -->
+
+<div id="Row2">
+<div class="widget2">
+	<H2>48hr Patient Flow from all Emergencey Depts.</H2>
+	<UL>
+		<LI>
+			<div id="sankey"></div>
+		</LI>
+		<LI style="font-size: 10px">The flow of patients admitted via the Emergencey Departments.</LI>
+	</UL>
+</div>
+
+
+<div class="widget1">
+	<H2>Regional Discharges</H2>
+	<UL>
+		<div id="choro"></div>
+		<LI></LI>
+		<LI style="font-size: 10px">Heat maps (choropleths) can be generated from databases or websockets.</LI>
+	</UL>
+</div>
+
+
+
+</div>
+
+
+<script>
+     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+     function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+     e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+     e.src='//www.google-analytics.com/analytics.js';
+     r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+     ga('create','UA-2319503-2');ga('send','pageview');
+</script>
+</body>
+</html>
