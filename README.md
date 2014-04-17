@@ -1,4 +1,4 @@
-A Simple D3.js Dashbaord by Colin A. White (Spring 2014)
+A Simple D3.js Dashboard by Colin A. White (Spring 2014)
 
 Online Example hosted here :
 
@@ -8,6 +8,6 @@ Initial blog post here :
 
     http://nyquist212.wordpress.com/
 
-Special thanks to Lars Kutthof for his mentoring and patience.
+Special thanks to Lars Kotthoff for his mentoring and patience.
 
     http://stackoverflow.com/users/1172002/lars-kotthoff
